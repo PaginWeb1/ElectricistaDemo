@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Electricista en Santiago | Certificado SEC</title>
-<meta name="description" content="Electricista certificado SEC en Santiago. Instalaciones eléctricas, emergencias 24/7 y atención profesional garantizada.">
+<title>Electricista Certificado SEC en Santiago | Emergencias 24/7</title>
+
+<meta name="description" content="Electricista certificado SEC en Santiago. Instalaciones, reparaciones, tableros eléctricos y emergencias 24 horas. Presupuesto sin compromiso.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -28,6 +29,7 @@ padding:120px 20px;
 .hero h1{font-size:45px;margin-bottom:20px;color:#facc15}
 .hero p{font-size:18px;margin-bottom:30px}
 
+/* BOTONES */
 .btn{
 padding:14px 26px;
 border:none;
@@ -40,11 +42,14 @@ transition:0.3s;
 }
 
 .btn-yellow{background:#facc15;color:black}
+.btn-yellow:hover{transform:scale(1.05)}
+
 .btn-outline{
 border:2px solid #facc15;
 color:#facc15;
 margin-left:10px;
 }
+.btn-outline:hover{background:#facc15;color:black}
 
 /* SERVICIOS */
 .services{background:#181818}
@@ -57,7 +62,10 @@ gap:20px;
 background:#222;
 padding:25px;
 border-radius:12px;
+transition:0.3s;
 }
+.card:hover{transform:translateY(-5px)}
+.card h3{color:#facc15;margin-bottom:10px}
 
 /* CERTIFICACION */
 .cert{
@@ -69,6 +77,21 @@ background:#181818;
 padding:30px;
 border-radius:12px;
 display:inline-block;
+}
+
+/* GALERIA */
+.gallery img{
+width:100%;
+border-radius:12px;
+height:200px;
+object-fit:cover;
+}
+
+/* TESTIMONIOS */
+.testimonial{
+background:#222;
+padding:20px;
+border-radius:12px;
 }
 
 /* ZONAS */
@@ -116,6 +139,10 @@ padding:12px;
 border:none;
 border-radius:8px;
 }
+textarea{resize:none}
+
+/* MAPA */
+iframe{width:100%;height:300px;border:none;border-radius:12px;margin-top:30px}
 
 /* FOOTER */
 footer{
@@ -139,7 +166,7 @@ text-decoration:none;
 box-shadow:0 4px 15px rgba(0,0,0,0.4);
 }
 
-/* CALL BUTTON */
+/* BOTON LLAMADA */
 .call-btn{
 position:fixed;
 bottom:20px;
@@ -165,8 +192,8 @@ box-shadow:0 4px 15px rgba(0,0,0,0.4);
 <div class="container">
 <h1>⚡ Electricista Certificado SEC en Santiago</h1>
 <p>Instalaciones, mantenciones y emergencias eléctricas 24/7</p>
-<a href="tel:+56978313595" class="btn btn-yellow">📞 Llamar Ahora</a>
-<a href="https://wa.me/56978313595?text=Hola%20necesito%20un%20presupuesto%20eléctrico" class="btn btn-outline">💬 WhatsApp</a>
+<a href="tel:+56900000000" class="btn btn-yellow">📞 Llamar Ahora</a>
+<a href="https://wa.me/56900000000?text=Hola%20necesito%20un%20presupuesto%20eléctrico" class="btn btn-outline">💬 WhatsApp</a>
 </div>
 </section>
 
@@ -194,6 +221,30 @@ box-shadow:0 4px 15px rgba(0,0,0,0.4);
 </div>
 </section>
 
+<!-- GALERIA -->
+<section>
+<div class="container">
+<h2>Trabajos Realizados</h2>
+<div class="grid gallery">
+<img src="https://images.unsplash.com/photo-1581091870627-3b5deeb5d3b6?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1581093588401-12b7a15c8c1b?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1581091215367-59ab6b5b6c15?auto=format&fit=crop&w=800&q=80">
+</div>
+</div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="services">
+<div class="container">
+<h2>Opiniones de Clientes</h2>
+<div class="grid">
+<div class="testimonial">⭐⭐⭐⭐⭐ Excelente servicio y muy profesional.</div>
+<div class="testimonial">⭐⭐⭐⭐⭐ Llegó rápido y solucionó el problema.</div>
+<div class="testimonial">⭐⭐⭐⭐⭐ Trabajo limpio y garantizado.</div>
+</div>
+</div>
+</section>
+
 <!-- ZONAS -->
 <section class="zonas">
 <div class="container">
@@ -214,17 +265,17 @@ box-shadow:0 4px 15px rgba(0,0,0,0.4);
 
 <div class="faq-item">
 <div class="faq-question" onclick="toggleFAQ(this)">¿Hacen atención de emergencia?</div>
-<div class="faq-answer">Sí, contamos con servicio 24/7 para emergencias eléctricas.</div>
+<div class="faq-answer">Sí, contamos con servicio 24/7.</div>
 </div>
 
 <div class="faq-item">
 <div class="faq-question" onclick="toggleFAQ(this)">¿Trabajan fines de semana?</div>
-<div class="faq-answer">Sí, trabajamos todos los días incluyendo fines de semana.</div>
+<div class="faq-answer">Sí, trabajamos todos los días.</div>
 </div>
 
 <div class="faq-item">
 <div class="faq-question" onclick="toggleFAQ(this)">¿Cuánto cuesta una visita?</div>
-<div class="faq-answer">El valor depende del tipo de trabajo. Puede solicitar presupuesto sin compromiso.</div>
+<div class="faq-answer">El valor depende del trabajo. Presupuesto sin compromiso.</div>
 </div>
 
 <div class="faq-item">
@@ -245,6 +296,9 @@ box-shadow:0 4px 15px rgba(0,0,0,0.4);
 <textarea rows="4" placeholder="Describe tu problema"></textarea>
 <button class="btn btn-yellow">Enviar Consulta</button>
 </form>
+
+<iframe src="https://maps.google.com/maps?q=Santiago%20Chile&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+
 </div>
 </section>
 

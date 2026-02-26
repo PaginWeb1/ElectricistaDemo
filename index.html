@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Electricista Certificado SEC en Santiago | Emergencias 24/7</title>
-
 <meta name="description" content="Electricista certificado SEC en Santiago. Instalaciones, reparaciones, tableros eléctricos y emergencias 24 horas. Presupuesto sin compromiso.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -193,7 +192,7 @@ box-shadow:0 4px 15px rgba(0,0,0,0.4);
 <h1>⚡ Electricista Certificado SEC en Santiago</h1>
 <p>Instalaciones, mantenciones y emergencias eléctricas 24/7</p>
 <a href="tel:+56978313595" class="btn btn-yellow">📞 Llamar Ahora</a>
-<a href="https://wa.me/56978313595?text=Hola%20necesito%20un%20presupuesto%20eléctrico" class="btn btn-outline">💬 WhatsApp</a>
+<a href="#" onclick="abrirWhatsApp()" class="btn btn-outline">💬 WhatsApp</a>
 </div>
 </section>
 
@@ -286,19 +285,11 @@ box-shadow:0 4px 15px rgba(0,0,0,0.4);
 </div>
 </section>
 
-<!-- CONTACTO -->
-<section class="contact">
+<!-- MAPA -->
+<section>
 <div class="container">
-<h2>Contacto</h2>
-<form>
-<input type="text" placeholder="Nombre">
-<input type="tel" placeholder="Teléfono">
-<textarea rows="4" placeholder="Describe tu problema"></textarea>
-<button class="btn btn-yellow">Enviar Consulta</button>
-</form>
-
+<h2>Ubicación</h2>
 <iframe src="https://maps.google.com/maps?q=Santiago%20Chile&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
-
 </div>
 </section>
 
@@ -306,13 +297,35 @@ box-shadow:0 4px 15px rgba(0,0,0,0.4);
 © 2026 Electricista Certificado SEC | Todos los derechos reservados
 </footer>
 
-<a href="https://wa.me/56978313595?text=Hola%20necesito%20un%20presupuesto%20eléctrico" class="whatsapp">💬</a>
+<!-- BOTONES FIJOS -->
+<a href="#" onclick="abrirWhatsApp()" class="whatsapp">💬</a>
 <a href="tel:+56978313595" class="call-btn">📞</a>
 
 <script>
+// FAQ toggle
 function toggleFAQ(element){
 const answer = element.nextElementSibling;
 answer.style.display = answer.style.display === "block" ? "none" : "block";
+}
+
+// WhatsApp mensaje profesional
+function abrirWhatsApp(){
+  const nombre = prompt("Ingresa tu nombre:");
+  const telefono = prompt("Ingresa tu teléfono:");
+  const detalle = prompt("Describe tu problema o servicio que necesitas:");
+
+  if(!nombre || !telefono || !detalle){
+    alert("Por favor completa todos los campos.");
+    return;
+  }
+
+  const mensaje = `Hola, soy *${nombre}*.
+Mi teléfono es: ${telefono}.
+Necesito: ${detalle}.
+Gracias por su atención.`;
+
+  const url = `https://wa.me/56978313595?text=${encodeURIComponent(mensaje)}`;
+  window.open(url, "_blank");
 }
 </script>
 

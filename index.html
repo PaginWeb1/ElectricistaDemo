@@ -10,22 +10,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* GLOBAL */
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',sans-serif;background:#0f0f0f;color:white;scroll-behavior:smooth}
-section{padding:80px 20px}
+section{padding:100px 20px;position:relative}
 .container{max-width:1100px;margin:auto}
-h2{text-align:center;margin-bottom:40px;color:#facc15}
+h2{text-align:center;margin-bottom:40px;color:#facc15;position:relative}
+
+/* NAVBAR */
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:#181818cc;
+backdrop-filter:blur(10px);
+padding:15px 0;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,0.5);
+}
+nav .container{display:flex;justify-content:space-between;align-items:center}
+nav a{color:white;text-decoration:none;margin:0 15px;font-weight:600;transition:0.3s;}
+nav a:hover{color:#facc15;}
 
 /* HERO */
 .hero{
-background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
 url('https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
 background-position:center;
 text-align:center;
-padding:120px 20px;
+padding:150px 20px;
+transition:0.5s;
 }
-.hero h1{font-size:45px;margin-bottom:20px;color:#facc15}
+.hero h1{font-size:50px;margin-bottom:20px;color:#facc15;text-shadow:2px 2px 5px black}
 .hero p{font-size:18px;margin-bottom:30px}
 
 /* BOTONES */
@@ -58,40 +75,47 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 .card{
-background:#222;
+background:linear-gradient(145deg,#222,#333);
 padding:25px;
-border-radius:12px;
+border-radius:20px;
 transition:0.3s;
+box-shadow:0 4px 15px rgba(0,0,0,0.5);
 }
-.card:hover{transform:translateY(-5px)}
+.card:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 8px 25px rgba(0,0,0,0.7);}
 .card h3{color:#facc15;margin-bottom:10px}
 
 /* CERTIFICACION */
 .cert{
-background:#000;
+background:#000 url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
 text-align:center;
+padding:120px 20px;
 }
 .cert-box{
-background:#181818;
+background:#181818cc;
 padding:30px;
-border-radius:12px;
+border-radius:20px;
 display:inline-block;
 }
 
 /* GALERIA */
 .gallery img{
 width:100%;
-border-radius:12px;
+border-radius:20px;
 height:200px;
 object-fit:cover;
+transition:0.3s;
 }
+.gallery img:hover{transform:scale(1.05);filter:brightness(1.1)}
 
 /* TESTIMONIOS */
 .testimonial{
 background:#222;
-padding:20px;
-border-radius:12px;
+padding:25px;
+border-radius:20px;
+box-shadow:0 4px 15px rgba(0,0,0,0.5);
+transition:0.3s;
 }
+.testimonial:hover{transform:scale(1.02);}
 
 /* ZONAS */
 .zonas ul{
@@ -102,16 +126,18 @@ gap:15px;
 text-align:center;
 }
 .zonas li{
-background:#222;
-padding:15px;
-border-radius:8px;
+background:linear-gradient(145deg,#222,#333);
+padding:20px;
+border-radius:12px;
+transition:0.3s;
 }
+.zonas li:hover{transform:scale(1.05);box-shadow:0 6px 20px rgba(0,0,0,0.5)}
 
 /* FAQ */
 .faq-item{
 background:#222;
 margin-bottom:10px;
-border-radius:8px;
+border-radius:12px;
 overflow:hidden;
 }
 .faq-question{
@@ -125,7 +151,7 @@ padding:15px;
 display:none;
 }
 
-/* CONTACTO / WHATSAPP FORM */
+/* CONTACTO / FORMULARIO */
 .contact{background:#181818;text-align:center;}
 .contact form{
 display:grid;
@@ -134,7 +160,7 @@ max-width:500px;
 margin:auto;
 background:#222;
 padding:25px;
-border-radius:12px;
+border-radius:20px;
 }
 .contact input, .contact textarea{
 padding:12px;
@@ -142,21 +168,6 @@ border:none;
 border-radius:8px;
 }
 .contact textarea{resize:none}
-
-/* POPUP FORM */
-.popup-form{
-position:fixed;
-bottom:90px;
-right:20px;
-background:#222;
-padding:20px;
-border-radius:12px;
-box-shadow:0 4px 15px rgba(0,0,0,0.4);
-display:none;
-z-index:1000;
-width:300px;
-}
-.popup-form h3{color:#facc15;margin-bottom:15px;text-align:center}
 
 /* MAPA */
 iframe{width:100%;height:300px;border:none;border-radius:12px;margin-top:30px}
@@ -169,7 +180,7 @@ background:#000;
 font-size:14px;
 }
 
-/* WHATSAPP / LLAMADA */
+/* BOTONES FLOTANTES */
 .whatsapp, .call-btn{
 position:fixed;
 bottom:20px;
@@ -185,16 +196,41 @@ align-items:center;
 .whatsapp{right:20px;background:#25D366;color:white;cursor:pointer;}
 .call-btn{left:20px;background:#facc15;color:black;}
 
+/* ANIMACIONES */
+.fade-in{opacity:0;transform:translateY(50px);transition:all 0.8s ease-out;}
+.fade-in.show{opacity:1;transform:translateY(0);}
+.slide-left{opacity:0;transform:translateX(-50px);transition:all 0.8s ease-out;}
+.slide-left.show{opacity:1;transform:translateX(0);}
+.slide-right{opacity:0;transform:translateX(50px);transition:all 0.8s ease-out;}
+.slide-right.show{opacity:1;transform:translateX(0);}
+
 @media(max-width:768px){
 .hero h1{font-size:30px}
-.popup-form{width:90%;right:5%}
+nav a{margin:0 10px;font-size:14px;}
 }
 </style>
 </head>
 <body>
 
+<!-- NAVBAR -->
+<nav>
+<div class="container">
+<div class="logo"><a href="#hero">⚡ Electricista SEC</a></div>
+<div class="menu">
+<a href="#hero">Inicio</a>
+<a href="#cert">Certificación</a>
+<a href="#services">Servicios</a>
+<a href="#gallery">Galería</a>
+<a href="#testimonials">Opiniones</a>
+<a href="#zonas">Zonas</a>
+<a href="#faq">FAQ</a>
+<a href="#contact">Contacto</a>
+</div>
+</div>
+</nav>
+
 <!-- HERO -->
-<section class="hero">
+<section class="hero fade-in" id="hero">
 <div class="container">
 <h1>⚡ Electricista Certificado SEC en Santiago</h1>
 <p>Instalaciones, mantenciones y emergencias eléctricas 24/7</p>
@@ -204,7 +240,7 @@ align-items:center;
 </section>
 
 <!-- CERTIFICACION -->
-<section class="cert">
+<section class="cert fade-in" id="cert">
 <div class="container">
 <h2>Certificación Profesional</h2>
 <div class="cert-box">
@@ -215,44 +251,44 @@ align-items:center;
 </section>
 
 <!-- SERVICIOS -->
-<section class="services">
+<section class="services fade-in" id="services">
 <div class="container">
 <h2>Nuestros Servicios</h2>
 <div class="grid">
-<div class="card"><h3>Instalaciones</h3><p>Instalaciones completas en viviendas y oficinas.</p></div>
-<div class="card"><h3>Reparaciones</h3><p>Solución de fallas eléctricas y cortocircuitos.</p></div>
-<div class="card"><h3>Tableros</h3><p>Mantención y actualización de tableros eléctricos.</p></div>
-<div class="card"><h3>Emergencias 24/7</h3><p>Atención inmediata todos los días del año.</p></div>
+<div class="card slide-left"><h3>Instalaciones</h3><p>Instalaciones completas en viviendas y oficinas.</p></div>
+<div class="card slide-right"><h3>Reparaciones</h3><p>Solución de fallas eléctricas y cortocircuitos.</p></div>
+<div class="card slide-left"><h3>Tableros</h3><p>Mantención y actualización de tableros eléctricos.</p></div>
+<div class="card slide-right"><h3>Emergencias 24/7</h3><p>Atención inmediata todos los días del año.</p></div>
 </div>
 </div>
 </section>
 
 <!-- GALERIA -->
-<section>
+<section id="gallery" class="fade-in">
 <div class="container">
 <h2>Trabajos Realizados</h2>
 <div class="grid gallery">
-<img src="https://images.unsplash.com/photo-1581091870627-3b5deeb5d3b6?auto=format&fit=crop&w=800&q=80">
-<img src="https://images.unsplash.com/photo-1581093588401-12b7a15c8c1b?auto=format&fit=crop&w=800&q=80">
-<img src="https://images.unsplash.com/photo-1581091215367-59ab6b5b6c15?auto=format&fit=crop&w=800&q=80">
+<img class="slide-left" src="https://images.unsplash.com/photo-1581091870627-3b5deeb5d3b6?auto=format&fit=crop&w=800&q=80">
+<img class="slide-right" src="https://images.unsplash.com/photo-1581093588401-12b7a15c8c1b?auto=format&fit=crop&w=800&q=80">
+<img class="slide-left" src="https://images.unsplash.com/photo-1581091215367-59ab6b5b6c15?auto=format&w=800&q=80">
 </div>
 </div>
 </section>
 
 <!-- TESTIMONIOS -->
-<section class="services">
+<section class="services fade-in" id="testimonials">
 <div class="container">
 <h2>Opiniones de Clientes</h2>
 <div class="grid">
-<div class="testimonial">⭐⭐⭐⭐⭐ Excelente servicio y muy profesional.</div>
-<div class="testimonial">⭐⭐⭐⭐⭐ Llegó rápido y solucionó el problema.</div>
-<div class="testimonial">⭐⭐⭐⭐⭐ Trabajo limpio y garantizado.</div>
+<div class="testimonial slide-left">⭐⭐⭐⭐⭐ Excelente servicio y muy profesional.</div>
+<div class="testimonial slide-right">⭐⭐⭐⭐⭐ Llegó rápido y solucionó el problema.</div>
+<div class="testimonial slide-left">⭐⭐⭐⭐⭐ Trabajo limpio y garantizado.</div>
 </div>
 </div>
 </section>
 
 <!-- ZONAS -->
-<section class="zonas">
+<section class="zonas fade-in" id="zonas">
 <div class="container">
 <h2>Zonas donde trabajamos</h2>
 <ul>
@@ -265,30 +301,38 @@ align-items:center;
 </section>
 
 <!-- FAQ -->
-<section>
+<section class="fade-in" id="faq">
 <div class="container">
 <h2>Preguntas Frecuentes</h2>
-
 <div class="faq-item">
 <div class="faq-question" onclick="toggleFAQ(this)">¿Hacen atención de emergencia?</div>
 <div class="faq-answer">Sí, contamos con servicio 24/7.</div>
 </div>
-
 <div class="faq-item">
 <div class="faq-question" onclick="toggleFAQ(this)">¿Trabajan fines de semana?</div>
 <div class="faq-answer">Sí, trabajamos todos los días.</div>
 </div>
-
 <div class="faq-item">
 <div class="faq-question" onclick="toggleFAQ(this)">¿Cuánto cuesta una visita?</div>
 <div class="faq-answer">El valor depende del trabajo. Presupuesto sin compromiso.</div>
 </div>
-
 <div class="faq-item">
 <div class="faq-question" onclick="toggleFAQ(this)">¿Emiten boleta?</div>
 <div class="faq-answer">Sí, emitimos boleta por todos nuestros servicios.</div>
 </div>
+</div>
+</section>
 
+<!-- CONTACTO -->
+<section class="contact fade-in" id="contact">
+<div class="container">
+<h2>Contacto</h2>
+<form id="contactForm">
+<input type="text" placeholder="Nombre" id="nombre" required>
+<input type="text" placeholder="Teléfono" id="telefono" required>
+<textarea placeholder="Describe tu problema o servicio que necesitas" id="detalle" required></textarea>
+<button type="submit" class="btn btn-yellow">💬 Enviar WhatsApp</button>
+</form>
 </div>
 </section>
 
@@ -300,22 +344,11 @@ align-items:center;
 </div>
 </section>
 
-<!-- POPUP FORMULARIO WHATSAPP -->
-<div class="popup-form" id="popupForm">
-<h3>Enviar WhatsApp</h3>
-<form id="whatsappForm">
-<input type="text" id="nombre" placeholder="Tu nombre" required>
-<input type="text" id="telefono" placeholder="Tu teléfono" required>
-<textarea id="detalle" placeholder="Describe tu problema o servicio" rows="4" required></textarea>
-<button type="submit" class="btn btn-yellow">💬 Enviar</button>
-</form>
-</div>
-
 <footer>
 © 2026 Electricista Certificado SEC | Todos los derechos reservados
 </footer>
 
-<!-- BOTONES FIJOS -->
+<!-- BOTONES FLOTANTES -->
 <a href="tel:+56978313595" class="call-btn">📞</a>
 <a href="#" class="whatsapp" id="btnWhatsAppFloat">💬</a>
 
@@ -326,39 +359,45 @@ const answer = element.nextElementSibling;
 answer.style.display = answer.style.display === "block" ? "none" : "block";
 }
 
-// Mostrar / ocultar popup WhatsApp
-const btnWhatsApp = document.getElementById("btnWhatsApp");
-const btnWhatsAppFloat = document.getElementById("btnWhatsAppFloat");
-const popupForm = document.getElementById("popupForm");
+// Intersection Observer animaciones
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+  if(entry.isIntersecting){
+    entry.target.classList.add("show");
+  }
+});
+},{threshold:0.2});
+document.querySelectorAll(".fade-in, .slide-left, .slide-right").forEach(el=>{
+observer.observe(el);
+});
 
-btnWhatsApp.addEventListener("click", ()=>popupForm.style.display="block");
-btnWhatsAppFloat.addEventListener("click", ()=>popupForm.style.display="block");
+// WhatsApp formulario
+function abrirWhatsApp(){
+  const nombre = document.getElementById("nombre").value;
+  const telefono = document.getElementById("telefono").value;
+  const detalle = document.getElementById("detalle").value;
 
-// Enviar formulario WhatsApp
-document.getElementById("whatsappForm").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  const nombre = document.getElementById("nombre").value.trim();
-  const telefonoUsuario = document.getElementById("telefono").value.trim();
-  const detalle = document.getElementById("detalle").value.trim();
-
-  if(!nombre || !telefonoUsuario || !detalle){
+  if(!nombre || !telefono || !detalle){
     alert("Por favor completa todos los campos.");
     return;
   }
 
-  const mensaje = `Hola, soy *${nombre}*.\nMi teléfono es: ${telefonoUsuario}.\nNecesito: ${detalle}.\nGracias por su atención.`;
+  const mensaje = `Hola, soy *${nombre}*.\nMi teléfono es: ${telefono}.\nNecesito: ${detalle}.\nGracias por su atención.`;
+  const url = `https://wa.me/56978313595?text=${encodeURIComponent(mensaje)}`;
+  window.open(url, "_blank");
 
-  const esMovil = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  let url = "";
-  if(esMovil){
-    url = `whatsapp://send?phone=56978313595&text=${encodeURIComponent(mensaje)}`;
-  } else {
-    url = `https://web.whatsapp.com/send?phone=56978313595&text=${encodeURIComponent(mensaje)}`;
-  }
+  // Limpiar formulario
+  document.getElementById("contactForm").reset();
+}
 
-  window.open(url,"_blank");
-  popupForm.style.display="none"; // Cierra el pop-up
+// Eventos botones
+document.getElementById("btnWhatsApp").addEventListener("click",abrirWhatsApp);
+document.getElementById("btnWhatsAppFloat").addEventListener("click",abrirWhatsApp);
+
+// Formulario submit
+document.getElementById("contactForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  abrirWhatsApp();
 });
 </script>
 

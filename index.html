@@ -10,8 +10,8 @@
 
 <style>
 /* RESET */
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#0f0f0f;color:white;scroll-behavior:smooth;line-height:1.6;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:#0f0f0f url('https://images.unsplash.com/photo-1622495899660-5b68963d1e2f?auto=format&fit=crop&w=1600&q=80') repeat fixed; color:white; scroll-behavior:smooth; line-height:1.6;}
 a{text-decoration:none;}
 
 /* NAVBAR */
@@ -19,24 +19,20 @@ nav{
 position:fixed;top:0;width:100%;background:rgba(0,0,0,0.7);padding:15px 20px;z-index:999;display:flex;justify-content:space-between;align-items:center;transition:0.3s;
 }
 nav.scrolled{background:rgba(0,0,0,0.95);}
-nav a{color:white;margin-left:15px;font-weight:600;transition:0.3s}
+nav a{color:white;margin-left:15px;font-weight:600;transition:0.3s;}
 nav a:hover{color:#facc15;}
-nav .logo{font-size:22px;font-weight:700;color:#facc15}
+nav .logo{font-size:22px;font-weight:700;color:#facc15;}
 
 /* HERO */
 .hero{
 background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;background-position:center;text-align:center;padding:150px 20px;
-transition:all 0.5s ease;
+background-size:cover;background-position:center;text-align:center;padding:150px 20px;position:relative;
 }
 .hero h1{font-size:48px;margin-bottom:20px;color:#facc15;text-shadow:2px 2px 6px black;}
 .hero p{font-size:20px;margin-bottom:30px;text-shadow:1px 1px 4px black;}
 
 /* BOTONES */
-.btn{
-padding:14px 28px;
-border:none;border-radius:10px;font-weight:600;cursor:pointer;display:inline-block;transition:0.4s;
-}
+.btn{padding:14px 28px;border:none;border-radius:12px;font-weight:600;cursor:pointer;display:inline-block;transition:0.4s;}
 .btn-yellow{background:#facc15;color:black;box-shadow:0 5px 15px rgba(250,204,21,0.4);}
 .btn-yellow:hover{transform:scale(1.1);}
 .btn-outline{border:2px solid #facc15;color:#facc15;}
@@ -46,44 +42,52 @@ border:none;border-radius:10px;font-weight:600;cursor:pointer;display:inline-blo
 section{padding:100px 20px;position:relative;}
 h2{text-align:center;margin-bottom:50px;color:#facc15;font-size:36px;text-shadow:1px 1px 4px black;}
 
+/* SEPARADORES ENTRE SECCIONES */
+section::before{content:"";display:block;height:50px;background:linear-gradient(to bottom,transparent,#0f0f0f,transparent);}
+
 /* CERTIFICACION */
 .cert{background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;text-align:center;}
-.cert-box{background:rgba(24,24,24,0.9);padding:35px;border-radius:12px;display:inline-block;box-shadow:0 5px 15px rgba(0,0,0,0.5);}
+.cert-box{background:rgba(24,24,24,0.95);padding:35px;border-radius:20px;display:inline-block;box-shadow:0 10px 30px rgba(0,0,0,0.5);}
 
 /* SERVICIOS */
-.services{background:#181818;}
+.services{background:rgba(24,24,24,0.9);}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
-.card{background:rgba(34,34,34,0.95);padding:25px;border-radius:12px;transition:0.3s;box-shadow:0 5px 15px rgba(0,0,0,0.3);text-align:center;}
-.card:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 10px 25px rgba(0,0,0,0.5);}
+.card{background:rgba(34,34,34,0.95);padding:25px;border-radius:20px;transition:0.3s;box-shadow:0 10px 25px rgba(0,0,0,0.4);text-align:center;}
+.card:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 12px 35px rgba(0,0,0,0.6);}
 .card h3{color:#facc15;margin-bottom:10px;}
 .card .precio{color:#facc15;font-weight:600;margin-bottom:10px;}
 
 /* GALERIA */
 .gallery-container{position:relative;overflow:hidden;}
 .gallery-track{display:flex;transition:transform 0.5s ease;}
-.gallery-track img{width:100%;border-radius:12px;height:220px;object-fit:cover;margin-right:15px;transition:transform 0.3s;}
+.gallery-track img{width:100%;border-radius:20px;height:220px;object-fit:cover;margin-right:15px;transition:transform 0.3s;}
 .gallery-track img:hover{transform:scale(1.05);}
 
 /* TESTIMONIOS */
 .testimonial-container{position:relative;overflow:hidden;max-width:100%;}
 .testimonial-track{display:flex;transition:transform 0.5s ease;gap:20px;}
-.testimonial{min-width:300px;background:rgba(34,34,34,0.95);padding:25px;border-radius:12px;text-align:center;flex-shrink:0;box-shadow:0 5px 15px rgba(0,0,0,0.4);}
+.testimonial{min-width:300px;background:rgba(34,34,34,0.95);padding:25px;border-radius:20px;text-align:center;flex-shrink:0;box-shadow:0 10px 25px rgba(0,0,0,0.5);}
 .testimonial img{width:60px;height:60px;border-radius:50%;margin-bottom:10px;object-fit:cover;}
+.testimonial-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:30px;color:#facc15;background:rgba(0,0,0,0.6);padding:10px;border-radius:50%;cursor:pointer;user-select:none;}
+.testimonial-nav.left{left:10px;}
+.testimonial-nav.right{right:10px;}
 
 /* ZONAS */
 .zonas{background:linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.95)), url('https://images.unsplash.com/photo-1581093588401-12b7a15c8c1b?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;}
 .zonas ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;text-align:center;}
-.zonas li{background:rgba(34,34,34,0.9);padding:20px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.3);}
+.zonas li{background:rgba(34,34,34,0.9);padding:20px;border-radius:20px;box-shadow:0 10px 25px rgba(0,0,0,0.5);}
 
 /* FAQ */
-.faq-item{background:rgba(34,34,34,0.95);margin-bottom:12px;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.3);}
-.faq-question{padding:18px;cursor:pointer;font-weight:600;background:rgba(31,31,31,0.95);}
+.faq-item{background:rgba(34,34,34,0.95);margin-bottom:12px;border-radius:20px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,0.5);}
+.faq-question{padding:18px;cursor:pointer;font-weight:600;background:rgba(31,31,31,0.95);display:flex;justify-content:space-between;align-items:center;}
 .faq-answer{padding:18px;display:none;}
+.faq-arrow{transition:transform 0.3s;}
+.faq-question.active .faq-arrow{transform:rotate(90deg);}
 
 /* CONTACTO */
 .contact{background:linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.95)), url('https://images.unsplash.com/photo-1581091215367-59ab6b5b6c15?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;}
-form{display:grid;gap:18px;max-width:500px;margin:auto;background:rgba(24,24,24,0.95);padding:25px;border-radius:12px;box-shadow:0 5px 25px rgba(0,0,0,0.5);}
-input,textarea{padding:14px;border:none;border-radius:8px;}
+form{display:grid;gap:18px;max-width:500px;margin:auto;background:rgba(24,24,24,0.95);padding:25px;border-radius:20px;box-shadow:0 10px 35px rgba(0,0,0,0.5);}
+input,textarea{padding:14px;border:none;border-radius:12px;}
 textarea{resize:none;}
 
 /* BOTONES FIJOS */
@@ -222,6 +226,8 @@ textarea{resize:none;}
 <p>⭐⭐⭐⭐⭐ Trabajo limpio y garantizado.</p>
 </div>
 </div>
+<div class="testimonial-nav left" onclick="prevTestimonial()">&#10094;</div>
+<div class="testimonial-nav right" onclick="nextTestimonial()">&#10095;</div>
 </div>
 </div>
 </section>
@@ -231,19 +237,19 @@ textarea{resize:none;}
 <div class="container">
 <h2>Preguntas Frecuentes</h2>
 <div class="faq-item">
-<div class="faq-question" onclick="toggleFAQ(this)">¿Hacen atención de emergencia?</div>
+<div class="faq-question"><span>¿Hacen atención de emergencia?</span><span class="faq-arrow">&#9654;</span></div>
 <div class="faq-answer">Sí, contamos con servicio 24/7.</div>
 </div>
 <div class="faq-item">
-<div class="faq-question" onclick="toggleFAQ(this)">¿Trabajan fines de semana?</div>
+<div class="faq-question"><span>¿Trabajan fines de semana?</span><span class="faq-arrow">&#9654;</span></div>
 <div class="faq-answer">Sí, trabajamos todos los días.</div>
 </div>
 <div class="faq-item">
-<div class="faq-question" onclick="toggleFAQ(this)">¿Cuánto cuesta una visita?</div>
+<div class="faq-question"><span>¿Cuánto cuesta una visita?</span><span class="faq-arrow">&#9654;</span></div>
 <div class="faq-answer">El valor depende del trabajo. Presupuesto sin compromiso.</div>
 </div>
 <div class="faq-item">
-<div class="faq-question" onclick="toggleFAQ(this)">¿Emiten boleta?</div>
+<div class="faq-question"><span>¿Emiten boleta?</span><span class="faq-arrow">&#9654;</span></div>
 <div class="faq-answer">Sí, emitimos boleta por todos nuestros servicios.</div>
 </div>
 </div>
@@ -271,11 +277,17 @@ textarea{resize:none;}
 <a href="tel:+56978313595" class="call-btn">📞</a>
 
 <script>
-// Navbar scroll effect
+// Navbar scroll
 window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);});
 
 // FAQ toggle
-function toggleFAQ(element){const answer=element.nextElementSibling;answer.style.display=answer.style.display==='block'?'none':'block';}
+document.querySelectorAll('.faq-question').forEach(q=>{
+  q.addEventListener('click',()=>{
+    q.classList.toggle('active');
+    let ans=q.nextElementSibling;
+    ans.style.display=ans.style.display==='block'?'none':'block';
+  });
+});
 
 // WhatsApp
 function abrirWhatsApp(){
@@ -284,24 +296,42 @@ function abrirWhatsApp(){
   const detalle=document.getElementById("detalle").value || "No detallado";
   const mensaje=`Hola, soy *${nombre}*.\nMi teléfono es: ${telefono}.\nNecesito: ${detalle}.\nGracias por su atención.`;
   window.open(`https://wa.me/56978313595?text=${encodeURIComponent(mensaje)}`,"_blank");
-  document.getElementById("whatsappForm").reset();
+  document.getElementById("whatsappForm").reset(); // Limpia el formulario después de enviar
 }
 
-// Animaciones al scroll
+// Animaciones al hacer scroll
 const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("show");}});
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
 },{threshold:0.2});
-document.querySelectorAll(".fade-in,.slide-left,.slide-right,.zoom-in").forEach(el=>observer.observe(el));
 
-// GALERIA SLIDER
-const galleryTrack=document.querySelector('.gallery-track');let galleryIndex=0;
-function slideGallery(){galleryIndex++;if(galleryIndex>=galleryTrack.children.length)galleryIndex=0;const width=galleryTrack.children[0].offsetWidth+15;galleryTrack.style.transform=`translateX(-${galleryIndex*width}px)`;}
-setInterval(slideGallery,3000);
+document.querySelectorAll(".fade-in, .slide-left, .slide-right, .zoom-in").forEach(el=>{
+  observer.observe(el);
+});
 
-// TESTIMONIOS SLIDER
-const testimonialTrack=document.querySelector('.testimonial-track');let testimonialIndex=0;
-function slideTestimonials(){testimonialIndex++;if(testimonialIndex>=testimonialTrack.children.length)testimonialIndex=0;const width=testimonialTrack.children[0].offsetWidth+20;testimonialTrack.style.transform=`translateX(-${testimonialIndex*width}px)`;}
-setInterval(slideTestimonials,4000);
+// Testimonios slider
+let currentIndex = 0;
+const track = document.querySelector('.testimonial-track');
+const testimonials = document.querySelectorAll('.testimonial');
+function updateSlider(){
+  const width = testimonials[0].offsetWidth + 20; // gap 20px
+  track.style.transform = `translateX(-${currentIndex * width}px)`;
+}
+function nextTestimonial(){
+  currentIndex = (currentIndex + 1) % testimonials.length;
+  updateSlider();
+}
+function prevTestimonial(){
+  currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+  updateSlider();
+}
+
+// Autoplay testimonios cada 5s
+setInterval(nextTestimonial,5000);
 </script>
+
 </body>
 </html>

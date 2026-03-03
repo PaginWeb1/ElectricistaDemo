@@ -3,198 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Electricista Certificado SEC en Santiago | Emergencias 24/7</title>
 <meta name="description" content="Electricista certificado SEC en Santiago. Instalaciones, reparaciones, tableros eléctricos y emergencias 24 horas. Presupuesto sin compromiso.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* GLOBAL */
+/* RESET Y TIPOGRAFIA */
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',sans-serif;background:#0f0f0f;color:white;scroll-behavior:smooth}
-section{padding:100px 20px;position:relative}
+section{padding:80px 20px}
 .container{max-width:1100px;margin:auto}
-h2{text-align:center;margin-bottom:40px;color:#facc15;position:relative}
+h2{text-align:center;margin-bottom:40px;color:#facc15}
 
 /* NAVBAR */
 nav{
-position:fixed;
-top:0;
-width:100%;
-background:#181818cc;
-backdrop-filter:blur(10px);
-padding:15px 0;
-z-index:1000;
-box-shadow:0 2px 10px rgba(0,0,0,0.5);
+position:fixed;top:0;width:100%;background:rgba(0,0,0,0.8);padding:15px 20px;z-index:999;
+display:flex;justify-content:space-between;align-items:center;
 }
-nav .container{display:flex;justify-content:space-between;align-items:center}
-nav a{color:white;text-decoration:none;margin:0 15px;font-weight:600;transition:0.3s;}
-nav a:hover{color:#facc15;}
+nav a{color:white;text-decoration:none;margin-left:15px;font-weight:600;transition:0.3s}
+nav a:hover{color:#facc15}
+nav .logo{font-size:20px;font-weight:700;color:#facc15}
 
 /* HERO */
 .hero{
-background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),
+background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
 url('https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;
-background-position:center;
-text-align:center;
-padding:150px 20px;
-transition:0.5s;
+background-size:cover;background-position:center;
+text-align:center;padding:150px 20px;
 }
-.hero h1{font-size:50px;margin-bottom:20px;color:#facc15;text-shadow:2px 2px 5px black}
+.hero h1{font-size:45px;margin-bottom:20px;color:#facc15}
 .hero p{font-size:18px;margin-bottom:30px}
 
 /* BOTONES */
 .btn{
-padding:14px 26px;
-border:none;
-border-radius:8px;
-font-weight:600;
-cursor:pointer;
-text-decoration:none;
-display:inline-block;
-transition:0.3s;
+padding:14px 26px;border:none;border-radius:8px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:0.3s;
 }
-
 .btn-yellow{background:#facc15;color:black}
 .btn-yellow:hover{transform:scale(1.05)}
-
-.btn-outline{
-border:2px solid #facc15;
-color:#facc15;
-margin-left:10px;
-}
+.btn-outline{border:2px solid #facc15;color:#facc15;margin-left:10px;}
 .btn-outline:hover{background:#facc15;color:black}
 
 /* SERVICIOS */
 .services{background:#181818}
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
 .card{
-background:linear-gradient(145deg,#222,#333);
-padding:25px;
-border-radius:20px;
-transition:0.3s;
-box-shadow:0 4px 15px rgba(0,0,0,0.5);
+background:#222;padding:25px;border-radius:12px;transition:0.3s;text-align:center;
 }
-.card:hover{transform:translateY(-5px) scale(1.02);box-shadow:0 8px 25px rgba(0,0,0,0.7);}
+.card:hover{transform:translateY(-5px)}
 .card h3{color:#facc15;margin-bottom:10px}
+.card .precio{color:#facc15;font-weight:600;margin-bottom:10px}
 
 /* CERTIFICACION */
-.cert{
-background:#000 url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-text-align:center;
-padding:120px 20px;
-}
-.cert-box{
-background:#181818cc;
-padding:30px;
-border-radius:20px;
-display:inline-block;
-}
+.cert{background:#000;text-align:center;}
+.cert-box{background:#181818;padding:30px;border-radius:12px;display:inline-block;}
 
 /* GALERIA */
-.gallery img{
-width:100%;
-border-radius:20px;
-height:200px;
-object-fit:cover;
-transition:0.3s;
-}
-.gallery img:hover{transform:scale(1.05);filter:brightness(1.1)}
+.gallery img{width:100%;border-radius:12px;height:200px;object-fit:cover;}
 
 /* TESTIMONIOS */
-.testimonial{
-background:#222;
-padding:25px;
-border-radius:20px;
-box-shadow:0 4px 15px rgba(0,0,0,0.5);
-transition:0.3s;
-}
-.testimonial:hover{transform:scale(1.02);}
+.testimonial{background:#222;padding:20px;border-radius:12px;text-align:center;}
+.testimonial img{width:50px;height:50px;border-radius:50%;margin-bottom:10px;}
 
 /* ZONAS */
-.zonas ul{
-list-style:none;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:15px;
-text-align:center;
-}
-.zonas li{
-background:linear-gradient(145deg,#222,#333);
-padding:20px;
-border-radius:12px;
-transition:0.3s;
-}
-.zonas li:hover{transform:scale(1.05);box-shadow:0 6px 20px rgba(0,0,0,0.5)}
+.zonas ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;text-align:center;}
+.zonas li{background:#222;padding:15px;border-radius:8px;}
 
 /* FAQ */
-.faq-item{
-background:#222;
-margin-bottom:10px;
-border-radius:12px;
-overflow:hidden;
-}
-.faq-question{
-padding:15px;
-cursor:pointer;
-font-weight:600;
-background:#1f1f1f;
-}
-.faq-answer{
-padding:15px;
-display:none;
-}
+.faq-item{background:#222;margin-bottom:10px;border-radius:8px;overflow:hidden;}
+.faq-question{padding:15px;cursor:pointer;font-weight:600;background:#1f1f1f;}
+.faq-answer{padding:15px;display:none;}
 
-/* CONTACTO / FORMULARIO */
-.contact{background:#181818;text-align:center;}
-.contact form{
-display:grid;
-gap:15px;
-max-width:500px;
-margin:auto;
-background:#222;
-padding:25px;
-border-radius:20px;
-}
-.contact input, .contact textarea{
-padding:12px;
-border:none;
-border-radius:8px;
-}
-.contact textarea{resize:none}
+/* CONTACTO */
+.contact{background:#181818}
+form{display:grid;gap:15px;max-width:500px;margin:auto;}
+input,textarea{padding:12px;border:none;border-radius:8px;}
+textarea{resize:none}
 
 /* MAPA */
 iframe{width:100%;height:300px;border:none;border-radius:12px;margin-top:30px}
 
 /* FOOTER */
-footer{
-text-align:center;
-padding:20px;
-background:#000;
-font-size:14px;
-}
+footer{text-align:center;padding:20px;background:#000;font-size:14px;}
 
-/* BOTONES FLOTANTES */
-.whatsapp, .call-btn{
-position:fixed;
-bottom:20px;
-padding:15px;
-border-radius:50%;
-font-size:22px;
-text-decoration:none;
-box-shadow:0 4px 15px rgba(0,0,0,0.4);
-display:flex;
-justify-content:center;
-align-items:center;
-}
-.whatsapp{right:20px;background:#25D366;color:white;cursor:pointer;}
-.call-btn{left:20px;background:#facc15;color:black;}
+/* WHATSAPP Y LLAMADA */
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px;border-radius:50%;font-size:22px;text-decoration:none;box-shadow:0 4px 15px rgba(0,0,0,0.4);}
+.call-btn{position:fixed;bottom:20px;left:20px;background:#facc15;color:black;padding:15px;border-radius:50%;font-size:22px;text-decoration:none;box-shadow:0 4px 15px rgba(0,0,0,0.4);}
 
 /* ANIMACIONES */
 .fade-in{opacity:0;transform:translateY(50px);transition:all 0.8s ease-out;}
@@ -204,28 +98,22 @@ align-items:center;
 .slide-right{opacity:0;transform:translateX(50px);transition:all 0.8s ease-out;}
 .slide-right.show{opacity:1;transform:translateX(0);}
 
-@media(max-width:768px){
-.hero h1{font-size:30px}
-nav a{margin:0 10px;font-size:14px;}
-}
+@media(max-width:768px){.hero h1{font-size:30px}}
 </style>
 </head>
 <body>
 
 <!-- NAVBAR -->
 <nav>
-<div class="container">
-<div class="logo"><a href="#hero">⚡ Electricista SEC</a></div>
-<div class="menu">
+<div class="logo">Electricista SEC</div>
+<div>
 <a href="#hero">Inicio</a>
 <a href="#cert">Certificación</a>
 <a href="#services">Servicios</a>
-<a href="#gallery">Galería</a>
-<a href="#testimonials">Opiniones</a>
+<a href="#gallery">Trabajos</a>
 <a href="#zonas">Zonas</a>
 <a href="#faq">FAQ</a>
 <a href="#contact">Contacto</a>
-</div>
 </div>
 </nav>
 
@@ -235,7 +123,7 @@ nav a{margin:0 10px;font-size:14px;}
 <h1>⚡ Electricista Certificado SEC en Santiago</h1>
 <p>Instalaciones, mantenciones y emergencias eléctricas 24/7</p>
 <a href="tel:+56978313595" class="btn btn-yellow">📞 Llamar Ahora</a>
-<a href="#" class="btn btn-outline" id="btnWhatsApp">💬 WhatsApp</a>
+<a href="#" onclick="abrirWhatsApp()" class="btn btn-outline">💬 WhatsApp</a>
 </div>
 </section>
 
@@ -255,10 +143,29 @@ nav a{margin:0 10px;font-size:14px;}
 <div class="container">
 <h2>Nuestros Servicios</h2>
 <div class="grid">
-<div class="card slide-left"><h3>Instalaciones</h3><p>Instalaciones completas en viviendas y oficinas.</p></div>
-<div class="card slide-right"><h3>Reparaciones</h3><p>Solución de fallas eléctricas y cortocircuitos.</p></div>
-<div class="card slide-left"><h3>Tableros</h3><p>Mantención y actualización de tableros eléctricos.</p></div>
-<div class="card slide-right"><h3>Emergencias 24/7</h3><p>Atención inmediata todos los días del año.</p></div>
+<div class="card slide-left">
+<h3>Instalaciones</h3>
+<p class="precio">Desde $50.000</p>
+<p>Instalaciones completas en viviendas y oficinas.</p>
+<a href="#" onclick="abrirWhatsApp()" class="btn btn-yellow">Cotizar</a>
+</div>
+<div class="card slide-right">
+<h3>Reparaciones</h3>
+<p class="precio">Desde $50.000</p>
+<p>Solución de fallas eléctricas y cortocircuitos.</p>
+<a href="#" onclick="abrirWhatsApp()" class="btn btn-yellow">Cotizar</a>
+</div>
+<div class="card slide-left">
+<h3>Tableros</h3>
+<p class="precio">Mantención $40.000</p>
+<p>Mantención y actualización de tableros eléctricos.</p>
+<a href="#" onclick="abrirWhatsApp()" class="btn btn-yellow">Cotizar</a>
+</div>
+<div class="card slide-right">
+<h3>Emergencias 24/7</h3>
+<p>Atención Inmediata</p>
+<a href="#" onclick="abrirWhatsApp()" class="btn btn-yellow">Cotizar</a>
+</div>
 </div>
 </div>
 </section>
@@ -268,21 +175,9 @@ nav a{margin:0 10px;font-size:14px;}
 <div class="container">
 <h2>Trabajos Realizados</h2>
 <div class="grid gallery">
-<img class="slide-left" src="https://images.unsplash.com/photo-1581091870627-3b5deeb5d3b6?auto=format&fit=crop&w=800&q=80">
-<img class="slide-right" src="https://images.unsplash.com/photo-1581093588401-12b7a15c8c1b?auto=format&fit=crop&w=800&q=80">
-<img class="slide-left" src="https://images.unsplash.com/photo-1581091215367-59ab6b5b6c15?auto=format&w=800&q=80">
-</div>
-</div>
-</section>
-
-<!-- TESTIMONIOS -->
-<section class="services fade-in" id="testimonials">
-<div class="container">
-<h2>Opiniones de Clientes</h2>
-<div class="grid">
-<div class="testimonial slide-left">⭐⭐⭐⭐⭐ Excelente servicio y muy profesional.</div>
-<div class="testimonial slide-right">⭐⭐⭐⭐⭐ Llegó rápido y solucionó el problema.</div>
-<div class="testimonial slide-left">⭐⭐⭐⭐⭐ Trabajo limpio y garantizado.</div>
+<img src="https://images.unsplash.com/photo-1581091870627-3b5deeb5d3b6?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1581093588401-12b7a15c8c1b?auto=format&fit=crop&w=800&q=80">
+<img src="https://images.unsplash.com/photo-1581091215367-59ab6b5b6c15?auto=format&fit=crop&w=800&q=80">
 </div>
 </div>
 </section>
@@ -297,6 +192,28 @@ nav a{margin:0 10px;font-size:14px;}
 <li>Las Condes</li>
 <li>Puente Alto</li>
 </ul>
+<iframe src="https://maps.google.com/maps?q=Santiago%20Chile&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="services fade-in" id="testimonials">
+<div class="container">
+<h2>Opiniones de Clientes</h2>
+<div class="grid">
+<div class="testimonial slide-left">
+<img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente">
+<p>⭐⭐⭐⭐⭐ Excelente servicio y muy profesional.</p>
+</div>
+<div class="testimonial slide-right">
+<img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Cliente">
+<p>⭐⭐⭐⭐⭐ Llegó rápido y solucionó el problema.</p>
+</div>
+<div class="testimonial slide-left">
+<img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Cliente">
+<p>⭐⭐⭐⭐⭐ Trabajo limpio y garantizado.</p>
+</div>
+</div>
 </div>
 </section>
 
@@ -326,21 +243,13 @@ nav a{margin:0 10px;font-size:14px;}
 <!-- CONTACTO -->
 <section class="contact fade-in" id="contact">
 <div class="container">
-<h2>Contacto</h2>
-<form id="contactForm">
-<input type="text" placeholder="Nombre" id="nombre" required>
-<input type="text" placeholder="Teléfono" id="telefono" required>
-<textarea placeholder="Describe tu problema o servicio que necesitas" id="detalle" required></textarea>
-<button type="submit" class="btn btn-yellow">💬 Enviar WhatsApp</button>
+<h2>Contáctanos por WhatsApp</h2>
+<form id="whatsappForm">
+<input type="text" id="nombre" placeholder="Tu nombre" required>
+<input type="text" id="telefono" placeholder="Tu celular" required>
+<textarea id="detalle" placeholder="Describe tu problema o servicio que necesitas" required></textarea>
+<button type="button" onclick="abrirWhatsApp()" class="btn btn-yellow">Enviar WhatsApp</button>
 </form>
-</div>
-</section>
-
-<!-- MAPA -->
-<section>
-<div class="container">
-<h2>Ubicación</h2>
-<iframe src="https://maps.google.com/maps?q=Santiago%20Chile&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
 </div>
 </section>
 
@@ -348,9 +257,9 @@ nav a{margin:0 10px;font-size:14px;}
 © 2026 Electricista Certificado SEC | Todos los derechos reservados
 </footer>
 
-<!-- BOTONES FLOTANTES -->
+<!-- BOTONES FIJOS -->
+<a href="#" onclick="abrirWhatsApp()" class="whatsapp">💬</a>
 <a href="tel:+56978313595" class="call-btn">📞</a>
-<a href="#" class="whatsapp" id="btnWhatsAppFloat">💬</a>
 
 <script>
 // FAQ toggle
@@ -359,45 +268,35 @@ const answer = element.nextElementSibling;
 answer.style.display = answer.style.display === "block" ? "none" : "block";
 }
 
-// Intersection Observer animaciones
-const observer = new IntersectionObserver((entries)=>{
-entries.forEach(entry=>{
-  if(entry.isIntersecting){
-    entry.target.classList.add("show");
-  }
-});
-},{threshold:0.2});
-document.querySelectorAll(".fade-in, .slide-left, .slide-right").forEach(el=>{
-observer.observe(el);
-});
-
-// WhatsApp formulario
+// WhatsApp mensaje profesional y limpiar form
 function abrirWhatsApp(){
-  const nombre = document.getElementById("nombre").value;
-  const telefono = document.getElementById("telefono").value;
-  const detalle = document.getElementById("detalle").value;
+  const nombre = document.getElementById("nombre").value || "Cliente";
+  const telefono = document.getElementById("telefono").value || "No proporcionado";
+  const detalle = document.getElementById("detalle").value || "No detallado";
 
-  if(!nombre || !telefono || !detalle){
-    alert("Por favor completa todos los campos.");
-    return;
-  }
+  const mensaje = `Hola, soy *${nombre}*.
+Mi teléfono es: ${telefono}.
+Necesito: ${detalle}.
+Gracias por su atención.`;
 
-  const mensaje = `Hola, soy *${nombre}*.\nMi teléfono es: ${telefono}.\nNecesito: ${detalle}.\nGracias por su atención.`;
   const url = `https://wa.me/56978313595?text=${encodeURIComponent(mensaje)}`;
-  window.open(url, "_blank");
+  window.open(url,"_blank");
 
-  // Limpiar formulario
-  document.getElementById("contactForm").reset();
+  // limpiar formulario
+  document.getElementById("whatsappForm").reset();
 }
 
-// Eventos botones
-document.getElementById("btnWhatsApp").addEventListener("click",abrirWhatsApp);
-document.getElementById("btnWhatsAppFloat").addEventListener("click",abrirWhatsApp);
+// Animaciones al hacer scroll usando Intersection Observer
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+},{threshold:0.2});
 
-// Formulario submit
-document.getElementById("contactForm").addEventListener("submit",function(e){
-  e.preventDefault();
-  abrirWhatsApp();
+document.querySelectorAll(".fade-in, .slide-left, .slide-right").forEach(el=>{
+  observer.observe(el);
 });
 </script>
 

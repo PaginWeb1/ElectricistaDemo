@@ -9,96 +9,86 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* RESET */
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#0f0f0f;color:white;scroll-behavior:smooth}
-section{padding:80px 20px}
-.container{max-width:1100px;margin:auto}
-h2{text-align:center;margin-bottom:40px;color:#facc15}
+body{font-family:'Inter',sans-serif;background:#0f0f0f;color:white;scroll-behavior:smooth;line-height:1.6;}
+a{text-decoration:none;}
 
 /* NAVBAR */
 nav{
-position:fixed;top:0;width:100%;background:rgba(0,0,0,0.8);padding:15px 20px;z-index:999;
-display:flex;justify-content:space-between;align-items:center;
+position:fixed;top:0;width:100%;background:rgba(0,0,0,0.7);padding:15px 20px;z-index:999;display:flex;justify-content:space-between;align-items:center;transition:0.3s;
 }
-nav a{color:white;text-decoration:none;margin-left:15px;font-weight:600;transition:0.3s}
-nav a:hover{color:#facc15}
-nav .logo{font-size:20px;font-weight:700;color:#facc15}
+nav.scrolled{background:rgba(0,0,0,0.95);}
+nav a{color:white;margin-left:15px;font-weight:600;transition:0.3s}
+nav a:hover{color:#facc15;}
+nav .logo{font-size:22px;font-weight:700;color:#facc15}
 
 /* HERO */
 .hero{
-background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
-url('https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b?auto=format&fit=crop&w=1600&q=80');
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;background-position:center;text-align:center;padding:150px 20px;
+transition:all 0.5s ease;
 }
-.hero h1{font-size:45px;margin-bottom:20px;color:#facc15}
-.hero p{font-size:18px;margin-bottom:30px}
-
-/* CERTIFICACION */
-.cert{
-background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.9)),
-url('https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;background-position:center;text-align:center;
-}
-.cert-box{background:rgba(24,24,24,0.9);padding:30px;border-radius:12px;display:inline-block;}
-
-/* SERVICIOS */
-.services{
-background:linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.9)),
-url('https://images.unsplash.com/photo-1581091870627-3b5deeb5d3b6?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;background-position:center;
-}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-.card{background:rgba(34,34,34,0.9);padding:25px;border-radius:12px;transition:0.3s;text-align:center;}
-.card:hover{transform:translateY(-5px) scale(1.03)}
-.card h3{color:#facc15;margin-bottom:10px}
-.card .precio{color:#facc15;font-weight:600;margin-bottom:10px}
-
-/* GALERIA SLIDER */
-.gallery-container{position:relative;overflow:hidden;}
-.gallery-track{display:flex;transition:transform 0.5s ease;}
-.gallery-track img{width:100%;border-radius:12px;height:200px;object-fit:cover;margin-right:15px;transition:transform 0.3s;}
-.gallery-track img:hover{transform:scale(1.05);}
-
-/* TESTIMONIOS SLIDER */
-.testimonial-container{position:relative;overflow:hidden;max-width:100%;}
-.testimonial-track{display:flex;transition:transform 0.5s ease;gap:20px;}
-.testimonial{min-width:300px;background:rgba(34,34,34,0.9);padding:20px;border-radius:12px;text-align:center;flex-shrink:0;}
-.testimonial img{width:50px;height:50px;border-radius:50%;margin-bottom:10px;}
-
-/* ZONAS */
-.zonas{
-background:linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.9)),
-url('https://images.unsplash.com/photo-1581093588401-12b7a15c8c1b?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;background-position:center;
-}
-.zonas ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;text-align:center;}
-.zonas li{background:rgba(34,34,34,0.9);padding:15px;border-radius:8px;}
-
-/* FAQ */
-.faq-item{background:rgba(34,34,34,0.9);margin-bottom:10px;border-radius:8px;overflow:hidden;}
-.faq-question{padding:15px;cursor:pointer;font-weight:600;background:rgba(31,31,31,0.9);}
-.faq-answer{padding:15px;display:none;}
-
-/* CONTACTO */
-.contact{
-background:linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.9)),
-url('https://images.unsplash.com/photo-1581091215367-59ab6b5b6c15?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;background-position:center;
-}
-form{display:grid;gap:15px;max-width:500px;margin:auto;background:rgba(24,24,24,0.9);padding:20px;border-radius:12px;}
-input,textarea{padding:12px;border:none;border-radius:8px;}
-textarea{resize:none}
+.hero h1{font-size:48px;margin-bottom:20px;color:#facc15;text-shadow:2px 2px 6px black;}
+.hero p{font-size:20px;margin-bottom:30px;text-shadow:1px 1px 4px black;}
 
 /* BOTONES */
-.btn{padding:14px 26px;border:none;border-radius:8px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:0.3s;}
-.btn-yellow{background:#facc15;color:black}
-.btn-yellow:hover{transform:scale(1.05)}
-.btn-outline{border:2px solid #facc15;color:#facc15;margin-left:10px;}
-.btn-outline:hover{background:#facc15;color:black}
+.btn{
+padding:14px 28px;
+border:none;border-radius:10px;font-weight:600;cursor:pointer;display:inline-block;transition:0.4s;
+}
+.btn-yellow{background:#facc15;color:black;box-shadow:0 5px 15px rgba(250,204,21,0.4);}
+.btn-yellow:hover{transform:scale(1.1);}
+.btn-outline{border:2px solid #facc15;color:#facc15;}
+.btn-outline:hover{background:#facc15;color:black;transform:scale(1.05);}
+
+/* SECCIONES */
+section{padding:100px 20px;position:relative;}
+h2{text-align:center;margin-bottom:50px;color:#facc15;font-size:36px;text-shadow:1px 1px 4px black;}
+
+/* CERTIFICACION */
+.cert{background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1581092583537-20d51b4b4f1b?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;text-align:center;}
+.cert-box{background:rgba(24,24,24,0.9);padding:35px;border-radius:12px;display:inline-block;box-shadow:0 5px 15px rgba(0,0,0,0.5);}
+
+/* SERVICIOS */
+.services{background:#181818;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
+.card{background:rgba(34,34,34,0.95);padding:25px;border-radius:12px;transition:0.3s;box-shadow:0 5px 15px rgba(0,0,0,0.3);text-align:center;}
+.card:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 10px 25px rgba(0,0,0,0.5);}
+.card h3{color:#facc15;margin-bottom:10px;}
+.card .precio{color:#facc15;font-weight:600;margin-bottom:10px;}
+
+/* GALERIA */
+.gallery-container{position:relative;overflow:hidden;}
+.gallery-track{display:flex;transition:transform 0.5s ease;}
+.gallery-track img{width:100%;border-radius:12px;height:220px;object-fit:cover;margin-right:15px;transition:transform 0.3s;}
+.gallery-track img:hover{transform:scale(1.05);}
+
+/* TESTIMONIOS */
+.testimonial-container{position:relative;overflow:hidden;max-width:100%;}
+.testimonial-track{display:flex;transition:transform 0.5s ease;gap:20px;}
+.testimonial{min-width:300px;background:rgba(34,34,34,0.95);padding:25px;border-radius:12px;text-align:center;flex-shrink:0;box-shadow:0 5px 15px rgba(0,0,0,0.4);}
+.testimonial img{width:60px;height:60px;border-radius:50%;margin-bottom:10px;object-fit:cover;}
+
+/* ZONAS */
+.zonas{background:linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.95)), url('https://images.unsplash.com/photo-1581093588401-12b7a15c8c1b?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;}
+.zonas ul{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;text-align:center;}
+.zonas li{background:rgba(34,34,34,0.9);padding:20px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.3);}
+
+/* FAQ */
+.faq-item{background:rgba(34,34,34,0.95);margin-bottom:12px;border-radius:10px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,0.3);}
+.faq-question{padding:18px;cursor:pointer;font-weight:600;background:rgba(31,31,31,0.95);}
+.faq-answer{padding:18px;display:none;}
+
+/* CONTACTO */
+.contact{background:linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.95)), url('https://images.unsplash.com/photo-1581091215367-59ab6b5b6c15?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;}
+form{display:grid;gap:18px;max-width:500px;margin:auto;background:rgba(24,24,24,0.95);padding:25px;border-radius:12px;box-shadow:0 5px 25px rgba(0,0,0,0.5);}
+input,textarea{padding:14px;border:none;border-radius:8px;}
+textarea{resize:none;}
 
 /* BOTONES FIJOS */
-.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px;border-radius:50%;font-size:22px;text-decoration:none;box-shadow:0 4px 15px rgba(0,0,0,0.4);}
-.call-btn{position:fixed;bottom:20px;left:20px;background:#facc15;color:black;padding:15px;border-radius:50%;font-size:22px;text-decoration:none;box-shadow:0 4px 15px rgba(0,0,0,0.4);}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:18px;border-radius:50%;font-size:24px;text-decoration:none;box-shadow:0 5px 20px rgba(0,0,0,0.5);}
+.call-btn{position:fixed;bottom:20px;left:20px;background:#facc15;color:black;padding:18px;border-radius:50%;font-size:24px;text-decoration:none;box-shadow:0 5px 20px rgba(0,0,0,0.5);}
 
 /* ANIMACIONES */
 .fade-in{opacity:0;transform:translateY(50px);transition:all 0.8s ease-out;}
@@ -107,14 +97,19 @@ textarea{resize:none}
 .slide-left.show{opacity:1;transform:translateX(0);}
 .slide-right{opacity:0;transform:translateX(50px);transition:all 0.8s ease-out;}
 .slide-right.show{opacity:1;transform:translateX(0);}
+.zoom-in{opacity:0;transform:scale(0.8);transition:all 0.8s ease-out;}
+.zoom-in.show{opacity:1;transform:scale(1);}
 
-@media(max-width:768px){.hero h1{font-size:30px}}
+@media(max-width:768px){
+.hero h1{font-size:32px;}
+.hero p{font-size:16px;}
+}
 </style>
 </head>
 <body>
 
 <!-- NAVBAR -->
-<nav>
+<nav id="navbar">
 <div class="logo">Electricista SEC</div>
 <div>
 <a href="#hero">Inicio</a>
@@ -138,7 +133,7 @@ textarea{resize:none}
 </section>
 
 <!-- CERTIFICACION -->
-<section class="cert fade-in" id="cert">
+<section class="cert fade-in zoom-in" id="cert">
 <div class="container">
 <h2>Certificación Profesional</h2>
 <div class="cert-box">
@@ -149,7 +144,7 @@ textarea{resize:none}
 </section>
 
 <!-- SERVICIOS -->
-<section class="services fade-in" id="services">
+<section class="services fade-in zoom-in" id="services">
 <div class="container">
 <h2>Nuestros Servicios</h2>
 <div class="grid">
@@ -181,7 +176,7 @@ textarea{resize:none}
 </section>
 
 <!-- GALERIA -->
-<section id="gallery" class="fade-in">
+<section id="gallery" class="fade-in zoom-in">
 <div class="container">
 <h2>Trabajos Realizados</h2>
 <div class="gallery-container">
@@ -195,7 +190,7 @@ textarea{resize:none}
 </section>
 
 <!-- ZONAS -->
-<section class="zonas fade-in" id="zonas">
+<section class="zonas fade-in zoom-in" id="zonas">
 <div class="container">
 <h2>Zonas donde trabajamos</h2>
 <ul>
@@ -204,12 +199,12 @@ textarea{resize:none}
 <li>Las Condes</li>
 <li>Puente Alto</li>
 </ul>
-<iframe src="https://maps.google.com/maps?q=Santiago%20Chile&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+<iframe src="https://maps.google.com/maps?q=Santiago%20Chile&t=&z=13&ie=UTF8&iwloc=&output=embed" style="width:100%;height:300px;border:none;border-radius:12px;margin-top:30px;"></iframe>
 </div>
 </section>
 
 <!-- TESTIMONIOS -->
-<section class="services fade-in" id="testimonials">
+<section class="services fade-in zoom-in" id="testimonials">
 <div class="container">
 <h2>Opiniones de Clientes</h2>
 <div class="testimonial-container">
@@ -232,7 +227,7 @@ textarea{resize:none}
 </section>
 
 <!-- FAQ -->
-<section class="fade-in" id="faq">
+<section class="fade-in zoom-in" id="faq">
 <div class="container">
 <h2>Preguntas Frecuentes</h2>
 <div class="faq-item">
@@ -255,7 +250,7 @@ textarea{resize:none}
 </section>
 
 <!-- CONTACTO -->
-<section class="contact fade-in" id="contact">
+<section class="contact fade-in zoom-in" id="contact">
 <div class="container">
 <h2>Contáctanos por WhatsApp</h2>
 <form id="whatsappForm">
@@ -276,64 +271,37 @@ textarea{resize:none}
 <a href="tel:+56978313595" class="call-btn">📞</a>
 
 <script>
+// Navbar scroll effect
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);});
+
 // FAQ toggle
-function toggleFAQ(element){
-const answer = element.nextElementSibling;
-answer.style.display = answer.style.display === "block" ? "none" : "block";
-}
+function toggleFAQ(element){const answer=element.nextElementSibling;answer.style.display=answer.style.display==='block'?'none':'block';}
 
-// WhatsApp mensaje profesional y limpiar form
+// WhatsApp
 function abrirWhatsApp(){
-  const nombre = document.getElementById("nombre").value || "Cliente";
-  const telefono = document.getElementById("telefono").value || "No proporcionado";
-  const detalle = document.getElementById("detalle").value || "No detallado";
-
-  const mensaje = `Hola, soy *${nombre}*.
-Mi teléfono es: ${telefono}.
-Necesito: ${detalle}.
-Gracias por su atención.`;
-
-  const url = `https://wa.me/56978313595?text=${encodeURIComponent(mensaje)}`;
-  window.open(url,"_blank");
-
+  const nombre=document.getElementById("nombre").value || "Cliente";
+  const telefono=document.getElementById("telefono").value || "No proporcionado";
+  const detalle=document.getElementById("detalle").value || "No detallado";
+  const mensaje=`Hola, soy *${nombre}*.\nMi teléfono es: ${telefono}.\nNecesito: ${detalle}.\nGracias por su atención.`;
+  window.open(`https://wa.me/56978313595?text=${encodeURIComponent(mensaje)}`,"_blank");
   document.getElementById("whatsappForm").reset();
 }
 
-// Animaciones al hacer scroll usando Intersection Observer
+// Animaciones al scroll
 const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
+  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("show");}});
 },{threshold:0.2});
+document.querySelectorAll(".fade-in,.slide-left,.slide-right,.zoom-in").forEach(el=>observer.observe(el));
 
-document.querySelectorAll(".fade-in, .slide-left, .slide-right").forEach(el=>{
-  observer.observe(el);
-});
-
-// GALERIA SLIDER AUTOMATICO
-const galleryTrack = document.querySelector('.gallery-track');
-let galleryIndex = 0;
-function slideGallery(){
-  galleryIndex++;
-  if(galleryIndex >= galleryTrack.children.length) galleryIndex = 0;
-  const width = galleryTrack.children[0].offsetWidth + 15;
-  galleryTrack.style.transform = `translateX(-${galleryIndex*width}px)`;
-}
+// GALERIA SLIDER
+const galleryTrack=document.querySelector('.gallery-track');let galleryIndex=0;
+function slideGallery(){galleryIndex++;if(galleryIndex>=galleryTrack.children.length)galleryIndex=0;const width=galleryTrack.children[0].offsetWidth+15;galleryTrack.style.transform=`translateX(-${galleryIndex*width}px)`;}
 setInterval(slideGallery,3000);
 
-// TESTIMONIOS SLIDER AUTOMATICO
-const testimonialTrack = document.querySelector('.testimonial-track');
-let testimonialIndex = 0;
-function slideTestimonials(){
-  testimonialIndex++;
-  if(testimonialIndex >= testimonialTrack.children.length) testimonialIndex = 0;
-  const width = testimonialTrack.children[0].offsetWidth + 20;
-  testimonialTrack.style.transform = `translateX(-${testimonialIndex*width}px)`;
-}
+// TESTIMONIOS SLIDER
+const testimonialTrack=document.querySelector('.testimonial-track');let testimonialIndex=0;
+function slideTestimonials(){testimonialIndex++;if(testimonialIndex>=testimonialTrack.children.length)testimonialIndex=0;const width=testimonialTrack.children[0].offsetWidth+20;testimonialTrack.style.transform=`translateX(-${testimonialIndex*width}px)`;}
 setInterval(slideTestimonials,4000);
 </script>
-
 </body>
 </html>
